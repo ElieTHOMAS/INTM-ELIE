@@ -10,7 +10,12 @@ namespace Elie_C__INTM
     {
         static void Main(string[] args)
         {
+    //FAIRE APPEL DE FONCTION ICI
+            ElementaryOperations.BasicOperation(3, 4, '+');
+        console.writeline()
         }
+
+    }
 
         public static class ElementaryOperations
         {
@@ -29,6 +34,5 @@ namespace Elie_C__INTM
                 //TODO
             }
         }
-    }
 
 }
