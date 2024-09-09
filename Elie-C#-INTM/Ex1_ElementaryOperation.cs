@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Serie_I
 {
+    /// <summary>
+    /// classe contenant les opérations élémentaires
+    /// </summary>
     public static class ElementaryOperations
     {//Opértions de base
         public static void BasicOperation(int a, int b, char c)

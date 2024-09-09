@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Serie_I
 {
+    /// <summary>
+    /// Affichage d'un message personnalisé en fonction de l'heure
+    /// </summary>
     public static class SpeakingClock
     {
         public static string GoodDay(int heure)
