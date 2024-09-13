@@ -29,34 +29,34 @@ namespace Serie_II
 
             int[] u = { 1, 2, 3 };
             int[] v = { -1, -4, 0 };
-            int[][] matrice = Matrix.BuildingMatrix(u, v);
+            int[,] matrice = Matrix.BuildingMatrix(u, v);
             Matrix.DisplayMatrix(matrice);
 
-            int[][] matriceGauche = new int[3][]
-            {
-                new int[2] { 1, 2 },
-                new int[2] { 4, 6 },
-                new int[2] { -1, 8 }
-            };
+            //int[][] matriceGauche = new int[3][]
+            //{
+            //    new int[2] { 1, 2 },
+            //    new int[2] { 4, 6 },
+            //    new int[2] { -1, 8 }
+            //};
 
-            int[][] matriceDroite = new int[3][]
-            {
-                new int[2] { -1, 5 },
-                new int[2] { -4, 0 },
-                new int[2] { 0, 2 }
-            };
+            //int[][] matriceDroite = new int[3][]
+            //{
+            //    new int[2] { -1, 5 },
+            //    new int[2] { -4, 0 },
+            //    new int[2] { 0, 2 }
+            //};
 
-            Console.WriteLine("Addition");
-            Matrix.DisplayMatrix(Matrix.Addition(matriceGauche, matriceDroite));
-            Console.WriteLine("Soustraction");
-            Matrix.DisplayMatrix(Matrix.Substraction(matriceGauche, matriceDroite));
-            matriceDroite = new int[2][]
-            {
-                new int[3] { -1, 5, 0 },
-                new int[3] { -4, 0, 1 }
-            };
-            Console.WriteLine("Multiplication");
-            Matrix.DisplayMatrix(Matrix.Multiplication(matriceGauche, matriceDroite));
+            //Console.WriteLine("Addition");
+            //Matrix.DisplayMatrix(Matrix.Addition(matriceGauche, matriceDroite));
+            //Console.WriteLine("Soustraction");
+            //Matrix.DisplayMatrix(Matrix.Substraction(matriceGauche, matriceDroite));
+            //matriceDroite = new int[2][]
+            //{
+            //    new int[3] { -1, 5, 0 },
+            //    new int[3] { -4, 0, 1 }
+            //};
+            //Console.WriteLine("Multiplication");
+            //Matrix.DisplayMatrix(Matrix.Multiplication(matriceGauche, matriceDroite));
             #endregion
 
             #region Exercice III - Crible d'Eratosthène
