@@ -10,6 +10,8 @@ namespace Serie_II
     {
         public static int LinearSearch(int[] tableau, int valeur)
         {
+
+
             //TODO
             return -1;
         }

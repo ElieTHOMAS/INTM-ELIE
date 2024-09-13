@@ -73,7 +73,8 @@ namespace Serie_II
                 }
             }
             #endregion
-
+/*
+ 
             #region Exercice IV - Questionnaire à choix multiple
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Exercice IV - Questionnaire à choix multiple");
@@ -121,7 +122,7 @@ namespace Serie_II
             };
             Quiz.AskQuestions(qcms);
             #endregion
-
+*/
             // Keep the console window open
             Console.WriteLine("----------------------");
             Console.WriteLine("Press any key to exit.");
