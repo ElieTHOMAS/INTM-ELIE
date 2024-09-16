@@ -17,7 +17,7 @@ namespace Serie_III
             Console.WriteLine("------------------------------");
 
             string path = Directory.GetCurrentDirectory();
-            string input = path + @"\class.csv";
+            string input = path + @"\note-serieIII.csv";
             string output = path + @"\result.csv";
             ClassCouncil.SchoolMeans(input, output);
             #endregion
