@@ -14,21 +14,26 @@ namespace Serie_III
             SchoolMeans("Input.csv", "Output.csv");
         }
 
-        static string[] Moyennes (List<string> entrees)
+        static string[] Moyennes(List<string> entrees)
         {
             double HTotal = 0;
             double MTotal = 0;
             int nombreH = 0;
             int nombreM = 0;
-            if (matiere == "Histoire")
+            foreach (string ligne in entrees)
+            {
+                string matiere = ligne.Split(';')[1];
+                string note = ligne.Split(';')[2];
+
+                if (matiere == "Histoire")
                 {
                     HTotal += double.Parse(note);
-                    nHist += 1;
+                    nombreH += 1;
                 }
                 else if (matiere == "Maths")
                 {
                     MTotal += double.Parse(note);
-                    nMath += 1;
+                    nombreM += 1;
                 }
             }
 
@@ -37,14 +42,10 @@ namespace Serie_III
             string[] sorties = new string[2];
             sorties[0] = "Histoire;" + histMoyenne.ToString();
             sorties[1] = "Maths;" + mathMoyenne.ToString();
-
+           
             return (sorties);
         }
-            foreach (string ligne in entrees)
-            {
-                string matiere = ligne.Split(';')[1];
-                string note = ligne.Split(';')[2];
-                note = note.Replace('.', ',');
+          
 
 
         public static void SchoolMeans(string input, string output)
@@ -68,7 +69,7 @@ namespace Serie_III
                         {
                             ent.Add(line);
                         }
-                        string [] sorties = Average(ent);
+                        string [] sorties = Moyennes(ent);
                         using (FileStream outputStream = File.OpenWrite(output))
                         {
                           using (TextWriter redac = new StreamWriter(outputStream))
@@ -79,10 +80,7 @@ namespace Serie_III
                             }
                           }
                         }
-    
-                       
-                    }
-                    
+                    }   
                 }
             }
                
