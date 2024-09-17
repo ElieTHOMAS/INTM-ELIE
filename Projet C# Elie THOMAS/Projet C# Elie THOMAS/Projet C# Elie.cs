@@ -14,15 +14,18 @@ namespace Projet_C__Elie_THOMAS
     //identifiant transaction unique, ne peut être présent qu'une fois dans le fichier transaction; exp et dest ne peuvent pas être le même numéro de compte
     internal class Comptes
     {
-        internal static string path = Directory.GetCurrentDirectory();
-        static string comptes = path + @"\compte.csv";
-        static string transactions = path + @"\transactions.csv";
-        static List<string> fichierC;
+        static string comptes = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\compte.csv";
+        static string transactions = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\transactions.csv";
+        static List<Comptes> fichierC;
         static List<string> transac;
+        internal int clients { get; set; }
+        internal int soldes { get; set; }
         internal static void Main()
         {
             input();
         }
+
+
         internal static void input()
         {
             string line;
@@ -34,14 +37,23 @@ namespace Projet_C__Elie_THOMAS
                 {
                     using (TextReader reader = new StreamReader(inputStream))
                     {
-                        fichierC = new List<string>();
+                        fichierC = new List<Comptes>();
                         line = reader.ReadLine();
                         string[] linesort = line.Split(';');
                         //Continue to read until you reach end of file
 
-                        while (reader != null)
+                        while (line != null)
                         {
-                            fichierC.Add(line);
+                            Comptes accounts = new Comptes();
+                            int b;
+                            int c;
+                            int.TryParse(linesort[0], out b);
+                            int.TryParse(linesort[1], out c);
+
+                            accounts.clients= b;
+                            accounts.soldes = c;
+                            fichierC.Add(accounts);
+                            line = reader.ReadLine();
                         }
                     }
                 }
@@ -75,21 +87,47 @@ namespace Projet_C__Elie_THOMAS
             {
                 Console.WriteLine("problème d'ouverture du fichier transactions ");
             }
+            //using (FileStream outputStream = File.OpenWrite(output))
+            //{
+            //    using (TextWriter redac = new StreamWriter(outputStream))
+            //    {
+            //        List<string> redac = new List<string>();
+            //        foreach (string misesajour in sorties)
+            //        {
+            //            redac.WriteLine(misesajour);
+            //        }
+            //    }
+            //}
         }
-        internal static void traitenemt()
-        {
-            foreach (string ligne in transac)
-            {
-                bool canConvert = long.TryParse(transac, out number1);
-                if (canConvert == true)
+        //internal static void traitenemt()
+        //{
+        //    int solde;
+
+        //    foreach (string cpt in transac)
+        //    {
+        //        int i = 1;
+        //        string s = "108";
+        //        bool canConvert = long.TryParse(transac[1], out i);
+        //        bool exp = transac[2] ==  "0";
+        //        bool des = transac[3] ==  "0";
+        //        bool exist_exp = transac.Exists(x => x.fichierC[0] == transac[2]);
+        //        bool exist_des = transac.Exists(x => x.fichierC[0] == transac[3]);
+        //        bool positif = transac[1] > 0;
+        //        //cas d'un dépot
+        //        if (canConvert == true && exp == false && des == true && exist_des == true)
+        //        {
+        //            int solde = fichierC[0] + transac[1];
+
+        //        }
+        //    }
 
 
-            }
-               
-
-        }
+        //}
 
 
+    }
 }
-}
+
+
+
 
