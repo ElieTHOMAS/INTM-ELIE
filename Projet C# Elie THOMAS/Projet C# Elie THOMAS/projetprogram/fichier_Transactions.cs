@@ -24,6 +24,7 @@ namespace projetprogram
         internal decimal Montant { get; set; }
         internal int Exp { get; set; }
         internal int Des { get; set; }
+        internal string Statut { get; set; }
 
     
         internal static List<Transactions> input1()
@@ -49,10 +50,12 @@ namespace projetprogram
                             int c;
                             int d;
                             int e;
+                        
                             int.TryParse(linesort[0], out b);
                             int.TryParse(linesort[1], out c);
                             int.TryParse(linesort[2], out d);
                             int.TryParse(linesort[3], out e);
+                          
 
                             moves.Id = b;
                             moves.Montant = (decimal)c;

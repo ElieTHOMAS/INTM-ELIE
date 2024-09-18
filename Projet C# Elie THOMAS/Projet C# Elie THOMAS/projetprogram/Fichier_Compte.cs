@@ -14,6 +14,7 @@ namespace projetprogram
         static List<Comptes> fichierC;
         internal int clients { get; set; }
         internal decimal solde { get; set; }
+   
 
 
         internal static List<Comptes> input2()
