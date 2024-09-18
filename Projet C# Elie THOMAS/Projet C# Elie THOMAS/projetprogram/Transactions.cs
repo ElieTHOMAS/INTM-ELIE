@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
 
-namespace Projet_C__Elie_THOMAS
+namespace projetprogram
 {
 
     //On a 2 fichiers test en entrée, 'Comptes' et 'transactions', 1 fichier créé en sortie.
@@ -24,12 +24,9 @@ namespace Projet_C__Elie_THOMAS
         internal int Montant { get; set; }
         internal int Exp { get; set; }
         internal int Des { get; set; }
-        internal static void Main()
-        {
-            input1();
-        }
 
-        internal static void input1()
+    
+        internal static List<Transactions> input1()
         {
             string line;
             try
@@ -72,6 +69,7 @@ namespace Projet_C__Elie_THOMAS
             {
                 Console.WriteLine("problème d'ouverture du fichier transactions ");
             }
+            return transac;
         }
 
     }

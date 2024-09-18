@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
 
-namespace input_comptes
+namespace projetprogram
 {
     internal class Comptes
     {
@@ -16,7 +16,7 @@ namespace input_comptes
         internal int soldes { get; set; }
 
 
-        internal static void input2()
+        internal static List<Comptes> input2()
         {
             string line;
             try
@@ -52,6 +52,7 @@ namespace input_comptes
             {
                 Console.WriteLine("problème d'ouverture du fichier Compte ");
             }
+            return fichierC;
         }
     }
 }

@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<Transactions> liste_transactions= Transactions.input1();
+            List<Comptes> liste_comptes = Comptes.input2();
         }
     }
 }
