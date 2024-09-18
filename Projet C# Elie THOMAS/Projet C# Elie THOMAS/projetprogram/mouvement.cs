@@ -2,82 +2,65 @@
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
+using System.Numerics;
 
 namespace projetprogram
 {
     internal class Mouvements
     {
-        internal static void traitement(List<Transactions> liste_transac,List<Comptes> liste_compte)
+        internal static void traitement(List<Transactions> liste_transac, List<Comptes> liste_compte)
         {
-            int solde;
-            int somme;
+            decimal somme;
 
             foreach (Transactions cpt in liste_transac)
             {
-                int i = 1;
-                int j;
-                string s = "108"; 
-            //    bool canConvert = long.TryParse(transac[1], out i);
-            //    bool canConvert2 = long.TryParse(fichierC[1], out j);
-            //    bool exp = transac[2] == "0";
-            //    bool des = transac[3] == "0";
-            //    bool exist_exp = transac.Exists(x => x.liste_compte[0] == transac[2]);
-            //    bool exist_des = transac.Exists(x => x.fichierC[0] == transac[3]);
-            //    bool positif = transac[1] > 0;
-            //    if (exist_des == true)
-            //    {
-            //      int des = transac.Find(x => x.liste_comptes[0].Contains(liste_transactions[3])) ;
-            //    }
-            //    if (exist_exp == true)
-            //    {
-            //        int exp = transac.Find(x => x.fichierC[0].Contains(transac[2]));
-            //    }
-            //    //  find si les booleen sont bons
-            //    // cas d'un dépot
-            //    switch (cpt)
 
-            //        case canConvert == true && exp == false && des == true && exist_des == true:
-            //        {
-            //            int solde = fichierC[0] + transac[1];
-
-            //        }
-            //    // cas d'un retrait
-            //    case canConvert == true && exp == true && des == false && exist_exp == true:
-            //        {
-            //            test retrait max 1000 euros depuis une date précise(partie II)
-            //                        if (i < 1001)//rajouter conditions entre 2 dates
-            //                int solde = fichierC[0] - transac[1];
-
-            //        }
-            //    //  cas d'un versement
-            //    case canConvert == true && exp == false && des == false && exist_exp == true && exist_des == true && transac[2] != transac[3]:
-            //        {
-            //            if (i > j)
-            //            {
-            //                int solde = fichierC[0] - transac[1];
-            //                changer solde compte ou on a versé
-            //                            }
+                //on veut un id de la liste de transactions qui corresponde à un id compte
+                //Dans liste_compte, existe-il un compte dont la propriete "client" est egale au destinataire de la transaction
 
 
-            //        }
-            //    // cas d'un prélèvement
-            //    case canConvert == true && exp == false && des == false && exist_exp == true && exist_des == true && transac[2] != transac[3]:
-            //        {
-            //            if ()
-            //            {
-            //               //test
-            //                             int solde = fichierC[0] + transac[1];
-            //                //changer solde compte ou on a versé
-            //            }
+                bool exp = cpt.Exp == 0; //On vérifie s'il s'agit d'un dépot
+                bool des = cpt.Des == 0; //On vérifie s'il s'agit d'un retrait
+                bool exist_des = liste_compte.Exists(compte => compte.clients == cpt.Des);
+                bool exist_exp = liste_compte.Exists(compte => compte.clients == cpt.Exp);
+                bool positif = cpt.Montant > 0;
+
+                Comptes destinataire = liste_compte.First(compte => compte.clients == cpt.Des);
+                Comptes expediteur = liste_compte.Find(compte => compte.clients == cpt.Exp);
+
+                // cas d'un dépot
+                if (exp == true && des == false && exist_des == true)
+
+                {
+                    destinataire.solde += cpt.Montant ;
+                    
+                }
+
+                // cas d'un retrait
+                if (exp == false && des == true && exist_exp == true && cpt.Montant < 1001) 
+
+                {
+                    expediteur.solde -= cpt.Montant;
+                    //somme += cpt.Montant;
+                    //assigner une variable a chaque compte qui cumule les retraits
+                }
+
+                //test retrait max 1000 euros depuis une date précise(partie ii)
+                //                if (i < 1001)
+                //    int solde = fichierc[0] - transac[1];
 
 
-            //        }
-            //    default
-            //            continue
+                //  cas d'un versement (ou prélèvement)
+                if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant)
 
+                {
+                    destinataire.solde += cpt.Montant;
+                    expediteur.solde -= cpt.Montant;
+                }
+            }
+                return 
 
-            //}
-            //    return 
+            }
         }
     }
-}    
+}

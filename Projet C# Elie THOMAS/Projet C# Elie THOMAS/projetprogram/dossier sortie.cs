@@ -10,15 +10,16 @@ namespace Projet_C__Elie_THOMAS
 {
     internal class Output
     {
-        static string sortie = Environment.GetFolderPath("C:\\Users\\Formation\\source\\repos\\INTM-ELIE");
-        internal static void output()
-        {
-            using (Streamwriter outputfile = new StreamWriter(Path.Combine(sortie, "Comptestraités.csv")))
-            {
-                foreach (string line in lines)
-                    outputFile.Comptestraités(line);
-            }
+        
+    //    static string sortie = Environment.GetFolderPath("C:\\Users\\Formation\\source\\repos\\INTM-ELIE");
+    //    internal static void output()
+    //    {
+    //        using (Streamwriter outputfile = new StreamWriter(Path.Combine(sortie, "Comptestraités.csv")))
+    //        {
+    ////            foreach (string line in lines)
+    //                outputFile.Comptestraités(line);
+    //        }
             
-        }
+    //    }
     } 
 }

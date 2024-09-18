@@ -13,7 +13,7 @@ namespace projetprogram
         static string comptes = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\compte.csv";
         static List<Comptes> fichierC;
         internal int clients { get; set; }
-        internal int soldes { get; set; }
+        internal decimal solde { get; set; }
 
 
         internal static List<Comptes> input2()
@@ -41,7 +41,7 @@ namespace projetprogram
                             int.TryParse(linesort[1], out c);
 
                             accounts.clients = b;
-                            accounts.soldes = c;
+                            accounts.solde = c;
                             fichierC.Add(accounts);
                             line = reader.ReadLine();
                         }

@@ -21,7 +21,7 @@ namespace projetprogram
         static List<Transactions> transac;
 
         internal int Id { get; set; }
-        internal int Montant { get; set; }
+        internal decimal Montant { get; set; }
         internal int Exp { get; set; }
         internal int Des { get; set; }
 
@@ -55,7 +55,7 @@ namespace projetprogram
                             int.TryParse(linesort[3], out e);
 
                             moves.Id = b;
-                            moves.Montant = c;
+                            moves.Montant = (decimal)c;
                             moves.Exp = d;
                             moves.Des = e;
                             transac.Add(moves);
