@@ -6,6 +6,13 @@
         {
             List<Transactions> liste_transactions= Transactions.input1();
             List<Comptes> liste_comptes = Comptes.input2();
+            //  List<Comptes> liste_comptes = Comptes.input2();
+            Mouvements.traitement(liste_transactions, liste_comptes);
         }
+        internal static void operations(liste_transactions, liste_comptes)
+        {
+
+        }
+
     }
 }

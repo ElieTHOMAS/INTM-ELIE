@@ -10,19 +10,15 @@ namespace Projet_C__Elie_THOMAS
 {
     internal class Output
     {
+        static string sortie = Environment.GetFolderPath("C:\\Users\\Formation\\source\\repos\\INTM-ELIE");
         internal static void output()
         {
-            using (FileStream outputStream = File.OpenWrite(output))
+            using (Streamwriter outputfile = new StreamWriter(Path.Combine(sortie, "Comptestraités.csv")))
             {
-                using (TextWriter redac = new StreamWriter(outputStream))
-                {
-                    List<string> redac = new List<string>();
-                    foreach (string misesajour in sorties)
-                    {
-                        redac.WriteLine(misesajour);
-                    }
-                }
+                foreach (string line in lines)
+                    outputFile.Comptestraités(line);
             }
+            
         }
     } 
 }
