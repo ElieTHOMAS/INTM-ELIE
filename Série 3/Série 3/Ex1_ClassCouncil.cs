@@ -76,7 +76,7 @@ namespace Serie_III
                           {
                             foreach (string ligne in sorties)
                             {
-                                redac.WriteLine(ligne);
+                               redac.WriteLine(ligne);
                             }
                           }
                         }

@@ -25,13 +25,12 @@ namespace projetprogram
                 bool positif = cpt.Montant > 0;
 
                 Comptes destinataire = liste_compte.First(compte => compte.clients == cpt.Des);
-                Comptes expediteur = liste_compte.Find(compte => compte.clients == cpt.Exp);
+                Comptes expediteur = liste_compte.First(compte => compte.clients == cpt.Exp);
                 cpt.Statut = "KO";
 
 
                 // cas d'un dépot
                 if (exp == true && des == false && exist_des == true)
-
                 {
                     destinataire.solde += cpt.Montant ;
                     cpt.Statut = "OK";
@@ -48,17 +47,12 @@ namespace projetprogram
               
                 //  cas d'un versement (ou prélèvement)
                 if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant)
-
                 {
                     destinataire.solde += cpt.Montant;
                     expediteur.solde -= cpt.Montant;
                     cpt.Statut = "OK";
                 }
             
-
-            }
-     
-
             }
 
         }
