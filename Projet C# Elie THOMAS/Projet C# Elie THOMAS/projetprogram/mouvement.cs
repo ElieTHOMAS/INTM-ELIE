@@ -35,13 +35,15 @@ namespace projetprogram
                 if (exist_des == true && des == false )
                 {
                     destinataire = liste_compte.First(compte => compte.clients == cpt.Des);
-                    compteurs = destinataire.compteur;
-                    somme = destinataire.cumul;
+                    
+                   
                 }
                 if (exist_exp == true && exp == false)
                 {
                     expediteur = liste_compte.First(compte => compte.clients == cpt.Exp);
-                  
+                    //Ces 2 variables sont spécifiques aux mouvements ou on enlève de l'argent d'un même compte, et permettent d'établir la condition des 10 derniers retraits < 1001 euros.
+                    compteurs = expediteur.compteur;
+                    somme = expediteur.cumul;
                 }
  
                 // cas d'un dépot
@@ -49,19 +51,18 @@ namespace projetprogram
                 {
                     destinataire.solde += cpt.Montant ;
                     cpt.Statut = "OK";
-
+                   
                 }
                 // cas d'un retrait
                 if (exp == false && des == true && exist_exp == true && cpt.Montant < 1001 && compteurs <= 10 && somme < 1001) 
                 {
-                 
+                    
                     expediteur.solde -= cpt.Montant;
                     cpt.Statut = "OK";
                     compteurs += 1;
                     somme += cpt.Montant;
                     
                 }
-                //test retrait max 1000 euros depuis une date précise(partie ii)
               
                 //  cas d'un versement (ou prélèvement)
                 if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant)
@@ -69,6 +70,9 @@ namespace projetprogram
                     destinataire.solde += cpt.Montant;
                     expediteur.solde -= cpt.Montant;
                     cpt.Statut = "OK";
+                    compteurs += 1;
+                    somme += cpt.Montant;
+
                 }
             
             }
