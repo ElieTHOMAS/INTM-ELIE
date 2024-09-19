@@ -49,8 +49,8 @@ namespace Percolation
 
         private bool IsFull(int i, int j)
         {
-             int coordonnees_F = Index(i,j);
-             int[,] plein = new int[,];
+            int coordonnees_F = Index(i,j);
+            int[,] plein = new int[,];
             plein[i,j] = true;
             return _full[coordonnees_F];
                 
