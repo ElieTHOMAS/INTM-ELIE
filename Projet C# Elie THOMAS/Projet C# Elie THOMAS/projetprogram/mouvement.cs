@@ -65,7 +65,7 @@ namespace projetprogram
                 }
               
                 //  cas d'un versement (ou prélèvement)
-                if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant)
+                if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant && compteurs <= 10 && somme < 1001)
                 {
                     destinataire.solde += cpt.Montant;
                     expediteur.solde -= cpt.Montant;
