@@ -31,7 +31,7 @@ namespace projetprogram
         {
             string line;
             try
-            {
+             {
                 //Pass the file path and file name to the StreamReader constructor
                 //StreamReader sr = new StreamReader(input);
                 using (FileStream inputStream = File.OpenRead(transactions))
@@ -40,7 +40,7 @@ namespace projetprogram
                     {
                         transac = new List<Transactions>();
                         line = reader.ReadLine();
-                        string[] linesort = line.Split(';');
+                        
                         //Continue to read until you reach end of file
 
                         while (line != null)
@@ -50,13 +50,14 @@ namespace projetprogram
                             int c;
                             int d;
                             int e;
-                        
+                            string[] linesort = line.Split(';');
+
                             int.TryParse(linesort[0], out b);
                             int.TryParse(linesort[1], out c);
                             int.TryParse(linesort[2], out d);
                             int.TryParse(linesort[3], out e);
-                          
 
+                          
                             moves.Id = b;
                             moves.Montant = (decimal)c;
                             moves.Exp = d;

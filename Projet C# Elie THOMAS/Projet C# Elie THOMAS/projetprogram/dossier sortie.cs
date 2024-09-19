@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
 using projetprogram;
+using Microsoft.VisualBasic;
 
 namespace projetprogram
 {
     internal class Output
     {
       
-        static string sortie = Environment.GetFolderPath("C:\\Users\\Formation\\source\\repos\\INTM-ELIE");
-        internal static void output( List<Transactions> liste_transaction)
+        //static string sortie = Environment.GetFolderPath("C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\Comptestraités.csv");
+        internal static void output(List<Transactions> liste_transaction)
         {
-            using (StreamWriter outputfile = new StreamWriter(Path.Combine(sortie, "Comptestraités.csv")))
+            using (StreamWriter outputfile = new StreamWriter(@"C:\Users\Formation\source\repos\INTM-ELIE\Comptestraites.csv"))
             {
-                foreach (Transaction line in liste_transaction)
+                foreach (Transactions line in liste_transaction)
                 {
-                    outputFile.Writeline(line.Id + ";" + line.Statut);
+                    outputfile.WriteLine(line.Id + ";" + line.Statut);
                 }
             }
 
