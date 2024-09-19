@@ -10,7 +10,7 @@ namespace Percolation
     {
         static void Main(string[] args)
         {
-
+          //  List<KeyValuePair<int, int>> = Percolation.CloseNeighbors();
 
             // Keep the console window open
             Console.WriteLine("----------------------");
