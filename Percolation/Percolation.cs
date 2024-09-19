@@ -26,7 +26,7 @@ namespace Percolation
         }
 
         public bool IsOpen(int i, int j)
-        {
+        {   
             return false;
         }
 
