@@ -17,7 +17,7 @@ namespace projetprogram2
     //classe transactions
     internal class Transactions
     {
-        static string transactions = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\transactions.csv";
+        static string transactions = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\Transactions.csv";
         static List<Transactions> transac;
 
         internal int Id { get; set; }

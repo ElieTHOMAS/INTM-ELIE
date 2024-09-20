@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
-using projetprogram;
+using projetprogram2;
 using Microsoft.VisualBasic;
 
 namespace projetprogram2

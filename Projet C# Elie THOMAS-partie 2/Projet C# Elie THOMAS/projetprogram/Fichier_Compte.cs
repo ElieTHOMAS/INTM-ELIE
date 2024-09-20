@@ -11,7 +11,7 @@ namespace projetprogram2
 {
     internal class Comptes
     {
-        static string comptes = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\\Projet C# Elie THOMAS-partie 2\\compte.csv";
+        static string comptes = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\\Projet C# Elie THOMAS-partie 2\\Comptes.csv";
         static List<Comptes> fichierC;
         internal int clients { get; set; }
         internal DateTime date { get; set; }
