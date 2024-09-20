@@ -13,7 +13,7 @@ namespace projetprogram2
     {
         internal static void traitement(List<Transactions> liste_transac, List<Comptes> liste_compte, List<Gestionnaires> liste_gestio)
         {
-            int nb_transac = 0
+            int nb_transac = 0;
             foreach (Comptes cpt in liste_compte)
             {
 
@@ -110,7 +110,7 @@ namespace projetprogram2
 
                 }
 
-            }
+            
         }
     }
 }
