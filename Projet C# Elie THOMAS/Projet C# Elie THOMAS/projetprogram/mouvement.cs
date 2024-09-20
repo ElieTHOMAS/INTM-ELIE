@@ -34,8 +34,7 @@ namespace projetprogram
 
                 if (exist_des == true && des == false )
                 {
-                    destinataire = liste_compte.First(compte => compte.clients == cpt.Des);
-                    
+                    destinataire = liste_compte.First(compte => compte.clients == cpt.Des);                   
                    
                 }
                 if (exist_exp == true && exp == false)
