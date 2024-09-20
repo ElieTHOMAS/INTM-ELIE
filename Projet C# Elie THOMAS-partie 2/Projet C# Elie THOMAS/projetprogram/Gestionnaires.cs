@@ -13,13 +13,13 @@ namespace projetprogram2
     {
         static string gestionnaires = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\\Projet C# Elie THOMAS-partie 2\\Gestionnaires.csv";
         static List<Gestionnaires> fichierG;
-        internal int clients { get; set; }
+        internal int gest { get; set; }
         internal string type { get; set; }
         internal int nb_transactions { get; set; }
 
 
 
-        internal static List<Gestionnaires> input2()
+        internal static List<Gestionnaires> input3()
         {
             string line;
             try
@@ -39,14 +39,14 @@ namespace projetprogram2
                         {
                             Gestionnaires gestio = new Gestionnaires();
 
-                            int.TryParse(linesort[0], out int cli);
+                            int.TryParse(linesort[0], out int ges);
                             string type1 = linesort[1];
                             int.TryParse(linesort[2], out int nombreT);
 
-                            gestio.clients = cli;
+                            gestio.gest = ges;
                             gestio.type = type1;
                             gestio.nb_transactions = nombreT;
-                           
+                            
                             fichierG.Add(gestio);
                             line = reader.ReadLine();
                         }

@@ -1,4 +1,6 @@
-﻿namespace projetprogram2
+﻿using System.Collections.Generic;
+
+namespace projetprogram2
 {
     internal class Program
     {
@@ -6,7 +8,8 @@
         {
             List<Transactions> liste_transactions= Transactions.input1();
             List<Comptes> liste_comptes = Comptes.input2();
-            Mouvements.traitement(liste_transactions, liste_comptes);
+            List<Gestionnaires> liste_gest = Gestionnaires.input3();
+            Mouvements.traitement(liste_transactions, liste_comptes, liste_gest);
             Output.output(liste_transactions);
         }
        
