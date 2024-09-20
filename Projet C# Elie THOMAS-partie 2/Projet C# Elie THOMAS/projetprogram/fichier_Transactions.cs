@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
 
-namespace projetprogram
+namespace projetprogram2
 {
 
     //On a 2 fichiers test en entrée, 'Comptes' et 'transactions', 1 fichier créé en sortie.
@@ -21,6 +21,7 @@ namespace projetprogram
         static List<Transactions> transac;
 
         internal int Id { get; set; }
+        internal DateTime DateT { get; set; }
         internal decimal Montant { get; set; }
         internal int Exp { get; set; }
         internal int Des { get; set; }
@@ -46,22 +47,20 @@ namespace projetprogram
                         while (line != null)
                         {
                             Transactions moves = new Transactions();
-                            int b;
-                            int c;
-                            int d;
-                            int e;
+                        
                             string[] linesort = line.Split(';');
 
-                            int.TryParse(linesort[0], out b);
-                            int.TryParse(linesort[1], out c);
-                            int.TryParse(linesort[2], out d);
-                            int.TryParse(linesort[3], out e);
+                            int.TryParse(linesort[0], out int ident);
+                            DateTime.TryParse(linesort[1], out DateTime date);
+                            decimal.TryParse(linesort[2], out decimal montant);
+                            int.TryParse(linesort[3], out int expediteur);
+                            int.TryParse(linesort[3], out int destinataire);
 
-                          
-                            moves.Id = b;
-                            moves.Montant = (decimal)c;
-                            moves.Exp = d;
-                            moves.Des = e;
+                            moves.Id = ident;
+                            moves.DateT = date;
+                            moves.Montant = montant;
+                            moves.Exp = expediteur;
+                            moves.Des = destinataire;
                             transac.Add(moves);
                             line = reader.ReadLine();
                         }

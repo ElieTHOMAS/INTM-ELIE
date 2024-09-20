@@ -4,7 +4,7 @@ using System.IO;
 using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
 
-namespace projetprogram
+namespace projetprogram2
 {/// <summary>
 /// PARTIE II
 /// </summary>

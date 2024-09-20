@@ -1,4 +1,4 @@
-﻿namespace projetprogram
+﻿namespace projetprogram2
 {
     internal class Program
     {

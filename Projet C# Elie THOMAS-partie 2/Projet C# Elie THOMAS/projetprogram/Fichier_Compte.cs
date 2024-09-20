@@ -7,7 +7,7 @@ using System.IO;
 using System.Diagnostics.Eventing.Reader;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace projetprogram
+namespace projetprogram2
 {
     internal class Comptes
     {
@@ -15,7 +15,6 @@ namespace projetprogram
         static List<Comptes> fichierC;
         internal int clients { get; set; }
         internal DateTime date { get; set; }
-
         internal decimal solde { get; set; }
         internal int entree { get; set; }
         internal int sortie { get; set; }
