@@ -5,7 +5,9 @@ using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
 
 namespace projetprogram
-{
+{/// <summary>
+/// PARTIE II
+/// </summary>
     internal class Mouvements
     {
         internal static void traitement(List<Transactions> liste_transac, List<Comptes> liste_compte)
@@ -54,7 +56,7 @@ namespace projetprogram
                    
                 }
                 // cas d'un retrait
-                if (exp == false && des == true && exist_exp == true && cpt.Montant < 1001 && compteurs <= 10 && somme < 1001) 
+                if (exp == false && des == true && exist_exp == true && cpt.Montant < 1001 && compteurs <= 10 && somme < 10001) 
                 {
                     
                     expediteur.solde -= cpt.Montant;
@@ -65,7 +67,7 @@ namespace projetprogram
                 }
               
                 //  cas d'un versement (ou prélèvement)
-                if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant && compteurs <= 10 && somme < 1001)
+                if (exp == false && des == false &&  exist_exp == true && exist_des == true && destinataire.clients != expediteur.clients && expediteur.solde > cpt.Montant && compteurs <= 10 && somme < 10001)
                 {
                     destinataire.solde += cpt.Montant;
                     expediteur.solde -= cpt.Montant;
