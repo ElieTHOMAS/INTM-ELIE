@@ -6,13 +6,14 @@ using System.Numerics;
 
 namespace projetprogram2
 {/// <summary>
-/// PARTIE II
+/// PARTIE II: J'ai créé la liste transaction, la partie mouvement est la même que celle de la partie 1, j'ai traité la suppression de compte, et les conditions 
+/// de transfert et de création de compte. 
 /// </summary>
     internal class Mouvements
     {
         internal static void traitement(List<Transactions> liste_transac, List<Comptes> liste_compte, List<Gestionnaires> liste_gestio)
         {
-
+            int nb_transac = 0
             foreach (Comptes cpt in liste_compte)
             {
 
@@ -24,11 +25,11 @@ namespace projetprogram2
                 bool exist_gestio_ent = liste_gestio.Exists(gestionnaire => gestionnaire.gest == cpt.entree);
                 bool exist_gestio_sor = liste_gestio.Exists(gestionnaire => gestionnaire.gest == cpt.sortie);
 
-                //creation d'un compte assigné à ce gestionnaire
+                ////creation d'un compte assigné à ce gestionnaire
                 //if (exist_gestio_ent == true && entrees == false && sorties == true)
                 //{
-                //   //
 
+                ////assigner nb_transac au compteur de traznsactions du nouveau gestinnaire
 
                 //}
                 //suppression d'un compte assigné à ce gestionnaire
@@ -37,13 +38,13 @@ namespace projetprogram2
                     liste_compte.Remove(cpt);
 
                 }
-                //    //transfert d'un compte d'un gestionnaire à un autre
-                //    if (exist_gestio_ent == true && exist_gestio_sor == true && entrees == false && sorties == false)
-                //    {
-                //       //
+                ////transfert d'un compte d'un gestionnaire à un autre
+                //if (exist_gestio_ent == true && exist_gestio_sor == true && entrees == false && sorties == false)
+                //{
+                //    //assigner nb_transac au compteur de traznsactions du nouveau gestinnaire
 
-                //    }
                 //}
+            }
 
 
                 decimal somme = 0;
