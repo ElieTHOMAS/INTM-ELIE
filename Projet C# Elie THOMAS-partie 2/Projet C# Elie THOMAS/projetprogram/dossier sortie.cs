@@ -8,7 +8,7 @@ using System.Diagnostics.Eventing.Reader;
 using projetprogram;
 using Microsoft.VisualBasic;
 
-namespace projetprogram
+namespace projetprogram2
 {
     internal class Output
     {
