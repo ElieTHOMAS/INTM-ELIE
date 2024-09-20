@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics.Eventing.Reader;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace projetprogram
 {
@@ -13,7 +14,8 @@ namespace projetprogram
         static string comptes = @"C:\\Users\\Formation\\source\\repos\\INTM-ELIE\\\Projet C# Elie THOMAS-partie 2\\compte.csv";
         static List<Comptes> fichierC;
         internal int clients { get; set; }
-        internal string date { get; set; }
+        internal DateTime date { get; set; }
+
         internal decimal solde { get; set; }
         internal int entree { get; set; }
         internal int sortie { get; set; }
@@ -21,7 +23,6 @@ namespace projetprogram
         internal decimal cumul { get; set; }
       
 
-        C:\Users\Formation\source\repos\INTM-ELIE\Projet C# Elie THOMAS-partie 2
         internal static List<Comptes> input2()
         {
             string line;
@@ -41,17 +42,17 @@ namespace projetprogram
                         while (line != null)
                         {
                             Comptes accounts = new Comptes();
-                            int b;
-                            int c;
-                            string date;
-                            int ent;
-                            int sor;
-                            int.TryParse(linesort[0], out b);
-                            int.TryParse(linesort[1], out c);
+                 
 
-                            accounts.clients = b;
-                            accounts.solde = c;
-                            accounts.date = date;
+                            int.TryParse(linesort[0], out int ident);
+                            DateTime.TryParse(linesort[1], out DateTime date1);
+                            decimal.TryParse(linesort[2], out decimal sol);
+                            int.TryParse(linesort[3], out int ent);
+                            int.TryParse(linesort[4], out int sor);
+
+                            accounts.clients = ident;
+                            accounts.date = date1;
+                            accounts.solde = sol;
                             accounts.entree = ent;
                             accounts.sortie = sor;
                             fichierC.Add(accounts);
