@@ -37,10 +37,9 @@ namespace projetprogram
                         while (line != null)
                         {
                             Comptes accounts = new Comptes();
-                            int b;
-                            int c;
-                            int.TryParse(linesort[0], out b);
-                            int.TryParse(linesort[1], out c);
+
+                            int.TryParse(linesort[0], out int b);
+                            int.TryParse(linesort[1], out int c);
 
                             accounts.clients = b;
                             accounts.solde = c;
